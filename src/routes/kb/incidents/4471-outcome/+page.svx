@@ -1,0 +1,53 @@
+---
+layout: runbook
+title: '#4471 · Parser fixed; booking-v3 hint retired'
+owner: NickMcGinnis and Codex
+status: closed
+reviewed: '2026-10-28'
+signature: 'NickMcGinnis / Codex / S01E03 / 2026-10-28'
+---
+
+<script>
+  import OutcomeTable from '#lib/kb/OutcomeTable.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+</script>
+
+## Engineering update
+
+The [course's engineering update](https://hq.mega.dev/challenges/what-it-shows), observed
+on 28 October, reports that #4471 closed on 5 October. Its two causes have different
+outcomes. Close the parser ticket as completed. Close the hint ticket as not planned;
+retiring the form is not a hint patch.
+
+<OutcomeTable />
+
+The parser update is `fix(dates): parse dd/mm for eu locales`. The hint outcome is
+`WON'T FIX`, with the reason `booking-v3 form retired`. These are the desk's reported
+engineering outcomes. This repository contains the support review, not the production
+implementation or independent production test results.
+
+## What changed from the review
+
+The [signed cause review](/kb/decisions/0002-dedupe-by-cause) identified two real defects
+and kept the tickets open while the only available account said a fix was queued.
+After the course accepted those tickets, refreshing the challenge page revealed the
+engineering update. That new evidence supports closure with different reasons.
+
+The accepted decision remains unchanged. Its cause-based triage policy still applies.
+The [old incident](/kb/incidents/4471) and its “known / one fix queued” prose describe
+the earlier state, not the current engineering disposition. This outcome page adds
+the later evidence without rewriting the historical records.
+
+## Evidence and limits
+
+Counts still come from the 4 October export, deduplicated by report ID and classified
+with the supplied code and tenant directory. The closure update does not change those
+counts. `evidence/analysis.json` records all assigned IDs; the source update is retained
+in `src/lib/data/desk-update-2026-10-05.json`.
+
+The five unusual time-related descriptions flagged in the review remain evidence
+limitations. The engineering update does not give per-report investigations for them.
+Closure follows the desk's stated disposition; it does not independently establish
+their root causes or prove that every affected booking was corrected.
+
+<RenderStamp {signature} />

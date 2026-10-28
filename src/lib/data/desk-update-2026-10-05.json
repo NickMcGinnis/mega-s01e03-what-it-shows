@@ -1,0 +1,20 @@
+{
+  "ticket": 4471,
+  "closed": "2026-10-05",
+  "source": "https://hq.mega.dev/challenges/what-it-shows",
+  "observed": "2026-10-28",
+  "causes": {
+    "parser": {
+      "status": "fixed",
+      "message": "fix(dates): parse dd/mm for eu locales",
+      "githubReason": "completed",
+      "issue": "https://github.com/NickMcGinnis/mega-s01e03-what-it-shows/issues/1"
+    },
+    "hint": {
+      "status": "won't fix",
+      "message": "booking-v3 form retired",
+      "githubReason": "not_planned",
+      "issue": "https://github.com/NickMcGinnis/mega-s01e03-what-it-shows/issues/2"
+    }
+  }
+}

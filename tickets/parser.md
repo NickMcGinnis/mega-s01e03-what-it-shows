@@ -1,3 +1,9 @@
+## Closure update
+
+The course's engineering update reports #4471 closed on 5 October: **parser FIXED**, `fix(dates): parse dd/mm for eu locales`. Closing as **completed** based on that desk update, not on a locally implemented production fix. See https://hq.mega.dev/challenges/what-it-shows and the signed outcome page at `src/routes/kb/incidents/4471-outcome/+page.svx`. The five unusual descriptions below remain limitations of the available evidence.
+
+## Original review
+
 The shared date parser reads month first for tenants whose date order is day first. This flips the intended day and month in bookings, invites and reminders.
 
 **Reports covered: 379 distinct report IDs**, received 2026-04-01 through 2026-10-04, across 11 tenants. These reports were merged into support ticket #4471. Count each ID once; the export contains overlapping pages.

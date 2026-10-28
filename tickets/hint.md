@@ -1,3 +1,9 @@
+## Closure update
+
+The course's engineering update reports #4471 closed on 5 October: **hint WON'T FIX**, `booking-v3 form retired`. Closing as **not planned**, because the affected form was retired; this does not claim the hint was patched. See https://hq.mega.dev/challenges/what-it-shows and the signed outcome page at `src/routes/kb/incidents/4471-outcome/+page.svx`.
+
+## Original review
+
 Booking-v3 prints `MM/DD/YYYY` for day-first tenants, but the form reads the entry in the tenant's day-first order. People following the hint enter a different date from the one the form interprets.
 
 **Reports covered: 33 distinct report IDs**, received 2026-04-17 through 2026-09-22, across three tenants: alder.physio (`de-DE`), copper.studio (`es-ES`) and pale.harbour (`pt-PT`). These reports were incorrectly merged into support ticket #4471, whose majority cause is the shared parser.

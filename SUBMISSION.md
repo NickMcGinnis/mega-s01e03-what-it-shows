@@ -12,6 +12,8 @@ cause counts.
 - [Published hint issue](https://github.com/NickMcGinnis/mega-s01e03-what-it-shows/issues/2)
 - [Signed KB page source](src/routes/kb/decisions/0002-dedupe-by-cause/+page.svx)
 - [Rendered KB page](rendered/kb/decisions/0002-dedupe-by-cause/index.html)
+- [Signed outcome page source](src/routes/kb/incidents/4471-outcome/+page.svx)
+- [Rendered outcome page](rendered/kb/incidents/4471-outcome/index.html)
 - [All KB pages, rendered](rendered/kb/index.html)
 - [Derived evidence and every assigned report ID](evidence/analysis.json)
 - [Rendered review as text](evidence/rendered-review.txt)
@@ -54,3 +56,9 @@ the review so their output can be compared with their prose.
 
 The public GitHub repository and two issues were authorized by the student. Course
 acceptance is pending.
+
+After accepting the tickets, the course exposed a new engineering update on its page:
+#4471 closed on 5 October; parser fixed, hint won't fix because booking-v3 was retired.
+The outcome page records that evidence. The matching GitHub closure reasons are
+`completed` for the parser and `not_planned` for the hint. The accepted decision
+record is preserved unchanged.
