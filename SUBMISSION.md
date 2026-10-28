@@ -56,8 +56,9 @@ the review so their output can be compared with their prose.
   their classifier assignment does not establish their underlying root cause.
 - The source data ends on 4 October. No claim is made about live reports after that cutoff.
 
-The public GitHub repository and two issues were authorized by the student. Course
-acceptance is pending.
+The public GitHub repository and two issues were authorized by the student. The course
+accepted the final submission on 28 October 2026. The
+[debrief](https://hq.mega.dev/challenges/what-it-shows#debrief) is saved on the course page.
 
 After accepting the tickets, the course exposed a new engineering update on its page:
 #4471 closed on 5 October; parser fixed, hint won't fix because booking-v3 was retired.
