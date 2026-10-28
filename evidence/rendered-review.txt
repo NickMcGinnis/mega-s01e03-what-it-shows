@@ -1,0 +1,33 @@
+0002 · Split #4471 and deduplicate by cause · support kb support desk · kb 0002 · Split #4471 and deduplicate by cause owner NickMcGinnis and Codex accepted reviewed 2026-10-28 · 0 days ago Decision Replace decision 0001 with cause-based triage.
+Keep that accepted record intact as history. Its subject-only rule and the triage page describe the old policy; their rendered review dates flag
+them as stale. Matching subjects can hide different causes, and different subjects can
+describe the same cause. The incident page says one issue and one queued fix. Its rendered
+table contradicts that claim. Treat the prose as an incomplete historical account.
+The export ends on 4 October; this review does not establish the live desk’s state after that date. Split the merged ticket into separate parser and booking-form hint tickets. A known
+  parser defect does not cover the form hint defect. A queued fix is not proof of resolution. What the code and export show The export has 427 rows, 412 distinct report IDs and
+  15 overlapping rows. It contains 2 causes.
+  Intake labels disagree with the tenant-based cause for 38 reports. 184 reports were merged on 2 July. Another 227 reports arrived after that day.
+  The received and merged bars below measure different events: a merge spike is not an arrival spike. 5 reports have unusual one-day or time-related descriptions. The supplied
+  classifier places them under parser; that assignment does not prove their root cause.
+  Keep these IDs visible and investigate the original booking, invite, date and timezone data
+  before asserting a third defect or closing them with the parser fix. R-41202 · kettle.books · email: Invite says Tuesday 12 May. Calendar says Monday 11 May. My client turned up on the Monday. We had coffee. R-41209 · alder.physio · app: Every booking in June is one day off. Only June. Why only June. R-41236 · nine.lanterns · app: The invite arrived before I made the booking. I would like to know how. R-41344 · pale.harbour · email: Client in Lisbon got Tuesday. Client in Toronto got Monday. Same meeting. We held it twice. R-41620 · lantern.row · email: Tuesday 6 October showed as Monday. I moved it myself. I have stopped reporting these but my colleague says it helps you. 412 reports merged into #4471 · 2 causes cause reports tagged as tenants seen parser 379 parser ×356 · hint ×23 11 2026-04-01 → 2026-10-04 #4471 hint 33 hint ×18 · parser ×15 3 2026-04-17 → 2026-09-22 not this ticket — no ticket of its own 5 reports read as a one-day move; filed under parser by tenant. Counts come from distinct report IDs, filtered to the merged ticket, then classified by
+the tenant directory and causeOf in src/lib/kb/causes.ts . Locale ordering comes from Intl.DateTimeFormat(...).formatToParts() . The browser locale and meta.intakeTag record
+intake’s guess, not the tenant’s date contract. Do not use those tags as issue counts. Parser: day-first dates read month first The shared parser assumes month-first input for day-first tenants. For example, report R-41203 says 2 December became 12 February. R-41205 says 3 October became 10 March,
+even though intake tagged it as hint. Reports through app and email, plus booking-v2
+forms, belong here. This is the majority cause represented by the original ticket. Fix the parser’s input contract and preserve the tenant’s intended date through booking,
+invite and reminder generation. Validate with ambiguous dates and day values above twelve.
+Do not rely on a browser locale or a general claim that all European locales are alike. Hint: booking-v3 tells day-first users to enter month first For form submissions from alder.physio ( de-DE ), copper.studio ( es-ES ) and pale.harbour ( pt-PT ), booking-v3 prints MM/DD/YYYY while its date interpretation
+uses the tenant’s day-first order. The hint and reader disagree. This needs its own fix,
+separate from the shared parser. R-41230 and R-41251 show why intake’s parser tag
+does not settle the cause. Make the displayed hint and form reader agree with the tenant’s locale. Check the hint,
+submitted value, saved booking and generated invite together. App and email reports
+from those same tenants still classify as parser. The desk kept merging 03-30 04-27 05-25 06-22 07-20 08-17 09-14 received · merged into #4471 · per week Reports continued arriving through the end of the export. Merging a report into a known
+ticket does not repair a booking or remove the need to investigate it. Customers describe
+missed appointments, manual corrections and workarounds; report totals measure reports,
+not all affected people or bookings. Calendar invites reach about 300,000 people in sched-prod , but this export does not identify the affected product for each report or
+justify treating that entire population as affected. Triage from now on Look up the tenant, its locale and booking form. Read the report body and channel. Compare causes. Merge only when the evidence supports the same defect; a shared
+subject alone is insufficient. Unknown tenants stay unplaced until investigated. Keep a distinct report ID once, retain the source IDs and count it under its cause. Keep anomalous time-related descriptions visible for investigation. Do not infer a
+timezone fix from these descriptions alone. Track both tickets separately and verify each fix against the affected booking flow.
+Recheck subsequent reports before marking either cause resolved. report A alder.physio copper.studio harbour.dental kettle.books lantern.row long.table morrow.tax nine.lanterns pale.harbour ridge.clinic stone.and.sons app email form hint report B alder.physio copper.studio harbour.dental kettle.books lantern.row long.table morrow.tax nine.lanterns pale.harbour ridge.clinic stone.and.sons app email form parser different causes — keep apart case same subject same cause app vs email, same tenant no yes same subject, same tenant, different channel yes no same subject, same channel, different tenant yes no different subject, same way in no yes no tenant on file yes no Ticket evidence Track the parser issue and booking-v3 hint issue separately. The repository’s tickets/parser.md and tickets/hint.md contain the issue text. evidence/analysis.json records every report ID assigned to each cause and the intake-tag
+cross-check. Run npm ci and npm run render to rebuild the evidence and all KB pages
+from the supplied code and data. The rendered pages are in rendered/kb/ . desk ref DR-54A4-PER7 Pages are written by people. Tables and charts are built from data at render time.
