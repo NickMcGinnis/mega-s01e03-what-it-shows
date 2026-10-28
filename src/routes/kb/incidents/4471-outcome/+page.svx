@@ -4,7 +4,7 @@ title: '#4471 · Parser fixed; booking-v3 hint retired'
 owner: NickMcGinnis and Codex
 status: closed
 reviewed: '2026-10-28'
-signature: 'NickMcGinnis / Codex / S01E03 / 2026-10-28'
+signature: 'v1.eyJzdWIiOiI0NDE0IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTMyMjUyOTcsImV4cCI6MTc5MzMxMTY5N30.YgZha9iJWZ1C_sCRl65PkOtnLugTvEN2OO7uSK_vJWo'
 ---
 
 <script>

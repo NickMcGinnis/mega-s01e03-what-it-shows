@@ -18,8 +18,10 @@ cause counts.
 - [Derived evidence and every assigned report ID](evidence/analysis.json)
 - [Rendered review as text](evidence/rendered-review.txt)
 
-The page's signature is `NickMcGinnis / Codex / S01E03 / 2026-10-28`. Its supplied
-RenderStamp component computes desk ref `DR-54A4-PER7` from that signature.
+The original review's signature is `NickMcGinnis / Codex / S01E03 / 2026-10-28`.
+Its supplied RenderStamp component computes desk ref `DR-54A4-PER7`. The outcome page
+carries the exact signature issued by the course's start-challenge tool, and its
+RenderStamp derives that page's desk reference from the issued signature.
 
 ## Reproduce
 
